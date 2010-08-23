@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gems>
+	<gem>
+		<name>ruby-debug-ide</name>
+		<version>0.4.5</version>
+		<description>IDE interface for ruby-debug.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>mysql</name>
+		<version>2.7.3</version>
+		<description>A win32-native build of the MySQL API module for Ruby.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>actionpack</name>
+		<version>2.3.4</version>
+		<description>Web-flow and rendering framework putting the VC in MVC.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rails</name>
+		<version>2.3.4</version>
+		<description>Web-application framework with template engine, control-flow layer, and ORM.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>actionmailer</name>
+		<version>2.3.4</version>
+		<description>Service layer for easy email delivery and testing.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>ruby-debug-base</name>
+		<version>0.10.3</version>
+		<description>Fast Ruby debugger - core component</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activerecord</name>
+		<version>2.3.4</version>
+		<description>Implements the ActiveRecord pattern for ORM.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activeresource</name>
+		<version>2.3.4</version>
+		<description>Think Active Record for web resources.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>linecache</name>
+		<version>0.43</version>
+		<description>Read file with caching</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>sqlite3-ruby</name>
+		<version>1.2.1</version>
+		<description>SQLite3/Ruby is a module to allow Ruby scripts to interface with a SQLite database.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rack</name>
+		<version>1.0.0</version>
+		<description>a modular Ruby webserver interface</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>mongrel</name>
+		<version>1.1.5</version>
+		<description>A small fast HTTP library and server that runs Rails, Camping, Nitro and Iowa apps.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rake</name>
+		<version>0.8.7</version>
+		<description>Ruby based make-like utility.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>fastthread</name>
+		<version>1.0.1</version>
+		<description>Optimized replacement for thread.rb primitives</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>gem_plugin</name>
+		<version>0.2.3</version>
+		<description>A plugin system based on rubygems that uses dependencies only</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activesupport</name>
+		<version>2.3.4</version>
+		<description>Support and utility classes used by the Rails framework.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>cgi_multipart_eof_fix</name>
+		<version>2.5.0</version>
+		<description>Fix an exploitable bug in CGI multipart parsing.</description>
+		<platform>ruby</platform>
+	</gem>
+</gems>

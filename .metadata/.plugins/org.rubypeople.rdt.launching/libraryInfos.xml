@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\ruby" version="1.9.1" vmTypeId="org.rubypeople.rdt.launching.StandardVMType">
+<bootpath>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/actionmailer-2.3.4/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/actionpack-2.3.4/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/activerecord-2.3.4/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/activeresource-2.3.4/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/activesupport-2.3.4/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/cgi_multipart_eof_fix-2.5.0/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/fastthread-1.0.1-x86-mswin32/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/fastthread-1.0.1-x86-mswin32/ext"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/gem_plugin-0.2.3/bin"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/gem_plugin-0.2.3/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/linecache-0.43-x86-mswin32/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/mongrel-1.1.5-x86-mswin32-60/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/mongrel-1.1.5-x86-mswin32-60/ext"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/mongrel-1.1.5-x86-mswin32-60/bin"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/mysql-2.7.3-x86-mswin32/ext"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/rack-1.0.0/bin"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/rack-1.0.0/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/rails-2.3.4/bin"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/rails-2.3.4/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/rake-0.8.7/bin"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/rake-0.8.7/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/ruby-debug-base-0.10.3-x86-mswin32/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/ruby-debug-ide-0.4.5/bin"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/ruby-debug-ide-0.4.5/lib"/>
+<entry path="C:/ruby/lib/ruby/gems/1.9.1/gems/sqlite3-ruby-1.2.1-x86-mswin32/lib"/>
+<entry path="C:/ruby/lib/ruby/site_ruby/1.9.1"/>
+<entry path="C:/ruby/lib/ruby/site_ruby/1.9.1/i386-msvcrt"/>
+<entry path="C:/ruby/lib/ruby/site_ruby"/>
+<entry path="C:/ruby/lib/ruby/vendor_ruby/1.9.1"/>
+<entry path="C:/ruby/lib/ruby/vendor_ruby/1.9.1/i386-msvcrt"/>
+<entry path="C:/ruby/lib/ruby/vendor_ruby"/>
+<entry path="C:/ruby/lib/ruby/1.9.1"/>
+<entry path="C:/ruby/lib/ruby/1.9.1/i386-mingw32"/>
+</bootpath>
+</libraryInfo>
+</libraryInfos>

@@ -1,0 +1,8 @@
+Gem rails-2.3.4
+  actionmailer (= 2.3.4, runtime)
+  actionpack (= 2.3.4, runtime)
+  activerecord (= 2.3.4, runtime)
+  activeresource (= 2.3.4, runtime)
+  activesupport (= 2.3.4, runtime)
+  rake (>= 0.8.3, runtime)
+
