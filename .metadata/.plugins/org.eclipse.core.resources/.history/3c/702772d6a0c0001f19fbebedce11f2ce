@@ -1,7 +1,0 @@
-import network._;
-
-object TravelRecordFactory {
-	def newRecord (route:(EntryPoint,ExitPoint), cost:Int) {
-		
-	}
-}

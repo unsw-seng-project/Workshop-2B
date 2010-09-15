@@ -1,3 +1,0 @@
-class Concession (concessionType:String, rate:Int) {
-
-}

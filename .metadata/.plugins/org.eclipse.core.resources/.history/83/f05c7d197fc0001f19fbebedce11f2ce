@@ -1,6 +1,0 @@
-package network
-
-trait AccessPoint {
-	val pointID: Int
-	val name: String
-}

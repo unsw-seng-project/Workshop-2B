@@ -1,6 +1,0 @@
-import network._;
-
-class TravelRecord(en:EntryPoint, ex:ExitPoint, cost:Int, date:Int) {
-	val entryPoint:
-	val exitPoint
-}

@@ -1,6 +1,0 @@
-import java.util;
-
-class TravelRecord(en:EntryPoint, ex:ExitPoint, cost:Int, date:Java's java.util.date) {
-	val entryPoint:
-	val exitPoint
-}

@@ -1,9 +1,0 @@
-package network
-
-abstract class AccessPoint {
-
-}package network
-
-trait AccessPoint {
-
-}

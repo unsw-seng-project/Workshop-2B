@@ -1,4 +1,0 @@
-class Concession {
-	val concessiontype: String
-	val rate: Int
-}

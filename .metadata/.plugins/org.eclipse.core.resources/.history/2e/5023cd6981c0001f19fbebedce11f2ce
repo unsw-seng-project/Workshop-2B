@@ -1,5 +1,0 @@
-class AccountStatus {
-	val statusName: String
-	val errorMessage: String
-
-}

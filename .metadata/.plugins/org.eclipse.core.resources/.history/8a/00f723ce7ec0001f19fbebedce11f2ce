@@ -1,5 +1,0 @@
-class Status {
-	val statusName: String
-	val errorMessage: String
-
-}
