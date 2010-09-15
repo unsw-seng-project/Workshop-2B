@@ -1,0 +1,4 @@
+class Concession {
+	val concessionType: String
+	val concessionRate: Int
+}

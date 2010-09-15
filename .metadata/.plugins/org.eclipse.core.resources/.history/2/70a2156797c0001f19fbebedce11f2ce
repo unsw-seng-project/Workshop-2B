@@ -1,0 +1,44 @@
+package network
+
+object Network {
+
+
+	
+	
+	val entryPoints : Set[EntryPoint] = Set()
+	val exitPoints : Set[ExitPoint] = Set()
+
+	val routes : Set[(EntryPoint,ExitPoint)] = setUpRoutes
+	
+	def routeStartsWith(entryPoint:EntryPoint):Boolean = {
+		var a1, a2 : Set[AccessPoint]
+
+		routes.unzip()
+	}
+	def setUpEntryPoints : Set[EntryPoint] = {
+		var ep : Set[EntryPoint] = Set()
+		ep += new EntryPoint(1, "London")
+		
+		return ep
+	}
+	
+	def setUpExitPoints : Set[ExitPoint] = {
+		var ep : Set[ExitPoint] = Set()
+		ep += new ExitPoint(2, "Paris")
+		
+		return ep
+	}		
+		
+	def setUpRoutes : Map[EntryPoint,ExitPoint] = {
+
+		var r : Map[EntryPoint,ExitPoint] = Map()
+		
+		//should put some checking here.
+		r += (entryPoints.find(_.getName=="London").get 
+				-> exitPoints.find(_.getName=="Paris").get)
+		
+		return r
+				
+	}
+
+}

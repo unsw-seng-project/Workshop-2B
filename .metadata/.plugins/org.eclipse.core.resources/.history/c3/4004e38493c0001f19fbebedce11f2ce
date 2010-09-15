@@ -1,0 +1,37 @@
+package network
+
+object Network {
+	
+	val entryPoints : Set[EntryPoint] = Set()
+	val exitPoints : Set[ExitPoint] = Set()
+
+	val routes : Map[EntryPoint,ExitPoint] = setUpRoutes
+	
+	def routeStartsWith(entryPoint:EntryPoint):Boolean 
+		= routes.contains(entryPoint)
+	
+	def setUpEntryPoints : Set[EntryPoint] = {
+		var ep : Set[EntryPoint] = Set()
+		ep += new EntryPoint(1, "London")
+		
+		return ep
+	}
+	
+	def setUpExitPoints : Set[ExitPoint] = {
+		var ep : Set[ExitPoint] = Set()
+		ep += new ExitPoint(2, "Paris")
+		
+		return ep
+	}		
+		
+	def setUpRoutes : Map[EntryPoint,ExitPoint] = {
+
+		var r : Map[EntryPoint,ExitPoint] = Map()
+		
+		r += ()
+		
+		return r
+				
+	}
+
+}

@@ -1,0 +1,49 @@
+import network._;
+
+class Account (accessDevice : AccessDevice, accountId : Int) {
+
+	
+	val concession : Concession = new Concession()
+	
+	var balance : Int = 0
+	var status = AccountStatus.Enabled
+	var travelHistory : List[TravelRecord] = List()
+
+	var userEntryPoint: EntryPoint = _
+	
+	def setBalance (amount : Int){ balance = amount}
+
+	def getBalance():Int = balance
+	
+	def addToBalance (amount : Int) {balance += amount}
+	def subtractFromBalance (amount : Int) {balance -= amount}
+	
+	def startTrip (entryPoint : EntryPoint):Boolean = {
+		var successful : Boolean = false;
+		if (Network.routeStartsWith(entryPoint)
+				&& userEntryPoint == null
+				&& balance >= constants.MINBALANCE + constants.PENALTYFARE
+				&& status == AccountStatus.Enabled) {
+			userEntryPoint = entryPoint
+			successful = true
+		}
+		
+		return successful
+	}
+	def endTrip (exitPoint : ExitPoint):Boolean = {
+		var successful : Boolean = false;
+		val route = userEntryPoint -> exitPoint
+		if (Network.routes.contains(route)
+				&& usersFare(route) <= (balance - constants.MINBALANCE)
+				&& status == AccountStatus.Enabled) {
+			
+			travelHistory += new TravelRecord(route._1, route._2, usersFare(route), 1)
+			balance -= usersFare(route)
+		}
+		return successful
+	}
+	
+	def usersFare(route:(EntryPoint,ExitPoint)): Int = {
+		return (Network.fare(route) + concession.rate)
+	}
+}

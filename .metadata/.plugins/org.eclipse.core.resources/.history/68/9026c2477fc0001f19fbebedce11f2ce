@@ -1,0 +1,9 @@
+package network
+
+class ExitPoint extends AccessPoint {
+	val pointID: Int
+	val name: String
+	
+	def getPointID() = pointID
+	def getName() = name
+}

@@ -1,0 +1,18 @@
+class System {
+	var allAccessDevices : List[AccessDevice] = List()
+	var currentAccessDevices : Set[AccessDevice] = Set()
+	var bannedAccessDevices : Set[AccessDevice] = Set()
+	
+	var accounts : Set[Account] = Set()
+	
+	val statusTypes : Set[AccountStatus] = Set()
+	val concessions : Set[Concession] = Set()
+	
+	def banAccessDevice(ad:AccessDevice) {
+		if (currentAccessDevices.contains(ad)) {
+			currentAccessDevices -= ad
+			bannedAccessDevices  += ad
+		}
+	}
+
+}

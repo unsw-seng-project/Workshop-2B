@@ -1,0 +1,5 @@
+package network
+
+class EntryPoint extends AccessPoint {
+
+}

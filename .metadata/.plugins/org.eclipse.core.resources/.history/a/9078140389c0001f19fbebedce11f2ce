@@ -1,0 +1,26 @@
+import network.EntryPoint;
+import network.ExitPoint;
+
+class Account (aD : AccessDevice, id : Int) {
+	val accountID = id
+	val accessDevice = aD
+	val concession : Concession = new Concession()
+	
+	var balance : Int = 0
+	var status : AccountStatus = AccountStatus.Enabled
+	val travelHistory : List[TravelRecord] = List()
+
+	var UserEntryPoint: EntryPoint = _
+	
+	def setBalance (amount : Int){ balance = amount}
+
+	def getBalance():Int = balance
+	
+	def addToBalance (amount : Int) {balance += amount}
+	def subtractFromBalance (amount : Int) {balance -= amount}
+	
+	def startTrip (entryPoint : EntryPoint) {
+		
+	}
+	def endTrip (exitPoint : ExitPoint)
+}

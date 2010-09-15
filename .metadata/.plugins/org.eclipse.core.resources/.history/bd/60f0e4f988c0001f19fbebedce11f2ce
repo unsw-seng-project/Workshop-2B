@@ -1,0 +1,5 @@
+object WeekDay extends Enumeration {
+  type WeekDay = Value
+  val Enabled = Value("Enabled")
+  val Disabled = Value("Disabled") 
+}

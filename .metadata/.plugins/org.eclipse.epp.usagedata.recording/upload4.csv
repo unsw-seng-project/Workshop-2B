@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.ui.views,3.4.1.M20090826-0800,"org.eclipse.ui.views",1284463691901
+started,bundle,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"org.eclipse.ui.workbench",1284463691902
+started,bundle,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.workbench.texteditor",1284463691904
+started,bundle,org.eclipse.update.configurator,3.3.0.v20090312,"org.eclipse.update.configurator",1284463691905
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1284463691906
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1284463691907
+os,sysinfo,,,"win32",1284463691911
+arch,sysinfo,,,"x86",1284463691911
+ws,sysinfo,,,"win32",1284463691911
+locale,sysinfo,,,"en_AU",1284463691911
+processors,sysinfo,,,"2",1284463691911
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1284463691911
+java.runtime.version,sysinfo,,,"1.6.0_21-b07",1284463691911
+java.specification.name,sysinfo,,,"Java Platform API Specification",1284463691911
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1284463691911
+java.specification.version,sysinfo,,,"1.6",1284463691911
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1284463691911
+java.version,sysinfo,,,"1.6.0_21",1284463691911
+java.vm.info,sysinfo,,,"mixed mode, sharing",1284463691911
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1284463691911
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1284463691911
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1284463691911
+java.vm.specification.version,sysinfo,,,"1.0",1284463691911
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1284463691911
+java.vm.version,sysinfo,,,"17.0-b17",1284463691911
