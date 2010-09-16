@@ -1,4 +1,4 @@
-#Wed Sep 15 20:01:36 EST 2010
+#Thu Sep 16 12:51:25 EST 2010
 content_assist_proposals_foreground=0,0,0
 spelling_locale=en_GB
 spelling_locale_initialized=true
@@ -10,7 +10,6 @@ org.eclipse.jface.textfont=1|Courier New|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|
 tabWidthPropagated=true
 org.eclipse.jdt.ui.editor.tab.width=
 fontPropagated=true
-org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.jdt.ui.javadoclocations.migrated=true
 proposalOrderMigrated=true
 org.eclipse.jdt.ui.formatterprofiles.version=11
@@ -18,4 +17,3 @@ content_assist_proposals_background=255,255,255
 content_assist_number_of_computers=17
 useQuickDiffPrefPage=true
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
-org.eclipse.jdt.ui.text.code_templates_migrated=true
