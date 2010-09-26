@@ -1,0 +1,28 @@
+<lift:surround with="default" at="content">
+		<h2>Welcome to your project!</h2>
+		<h3>List of EntryPoints</h3>
+		
+		<table> 
+
+			<tr>
+				<th> Entry </th>
+				<th>Exit</th>
+			</tr>
+			<lift:helloWorld.routes> 
+			<tr> 
+				<td><r:entry /></td> 
+				<td><r:exit /></td> 
+			</tr> 
+			</lift:helloWorld.routes> 
+		</table>
+		
+		 <p>
+		 <lift:helloWorld.newAccountForm form="POST">
+			<account:submit />
+		 </lift:helloWorld.newAccountForm>
+		 
+		 </p>
+		
+		<p><lift:helloWorld.howdy /></p>
+</lift:surround>
+

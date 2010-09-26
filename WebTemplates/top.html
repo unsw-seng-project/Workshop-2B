@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="home">
+	<div id="header">
+		<div id="title"><img src="images/title.png" width="294" height="87" alt="title" /></div>
+  	  <div id="navbar">
+      	<div class="wrapper">
+        	<div class="listContainer">
+        	<ul class="nav">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+           <li> <a href="">My Account</a></li>
+            <li><a href="">Routes & Pricing</a></li>
+            <li><a href="">Timetable</a></li>
+            </ul>
+            </div>
+            <lift:sessionState.loginStatus>
+            <div id="loggedStatus"> logged in as : <a href="/myaccount.html">Login</a><lift:loggedIn>Login </lift:loggedIn></div>
+            </lift:sessionState.loginStatus>
+
+        </div>
+	</div>
+	<div id="body">
+        
+        <div id="myAccount" class="rounded-corners">
+        	<span>my account menu</span>
+            <div id="accountMenu">
+            	<ul>
+                <a href="/accDetails.html"><li>Account Details </li></a>
+                <a href=""><li>Personal Details </span></li></a>
+                <a href=""><li>Add Money </li></a>
+                <a href=""><li>Travel History </li></a>
+                </ul>
+                
+            </div>
+        </div>
+        <div id="main">
+        
+        <h1> Account Details </h1>
+        
+        <p>Account ID: </p>
+        <p>Balance: </p>
+        <p>Last Trip Date: </p>
+        <p>Number of Trips:</p>
+        
+        <h1> Personal Details </h1>
+        
+        <p>First Name: </p>
+        <p>Last Name: </p>
+        <p>Address: </p>
+        <p>Password: </p>
+        
+        <h1>Add To Balance </h1>
+        <div>
+        	<lift:userAccount.addToBalance form="POST">
+			<balance:current />
+            <balance:newAmount />
+            <balance:submit />
+		 	</lift:userAccount.addToBalance>
+        </div>
+
+		<h1>Trip History</h1>
+        <table>
+        	<tr>
+            <th>Date</th><th>Entry Point</th><th>ExitPoint</th><th>Cost</th>
+            </tr>
+            <tr>
+            <td>11/12/10</td><td>London</td><td>Paris</td><td>$1.20</td>
+            </tr>
+        </table>
+
+       	</div>
+        
+        
+    </div>
+	<div id="footer">    
+    	<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate lectus sit amet velit vehicula eu rhoncus nunc placerat. Nullam vulputate ornare nunc id faucibus. Vestibulum nec nisi sem. Maecenas pellentesque massa id tellus ullamcorper ultricies. Morbi posuere rhoncus nunc. Integer lobortis enim vel erat aliquet sed bibendum elit consequat. Curabitur vel tellus ipsum, imperdiet suscipit enim. Pellentesque ac tellus ac libero porta sagittis. Morbi feugiat, neque sed porta porta, arcu erat pulvinar eros, quis elementum neque nisi eget turpis. Vestibulum leo enim, varius a malesuada eu, porttitor vitae dui. Duis mi eros, pellentesque eget bibendum eget, pharetra et nunc. In hac habitasse pla;tea dictumst. Phasellus non tristique urna. Etiam molestie, diam ut tristique interdum, mi ligula imperdiet augue, et laoreet neque magna pretium augue. Ut tortor diam, placerat vitae facilisis id, interdum eu arcu. Proin dapibus tortor neque, in rutrum nisi. </p>
+        </div>
+</body>
+</html>
