@@ -22,7 +22,7 @@ class HelloWorld {
   def newAccountForm (xhtml: NodeSeq): NodeSeq = {
       def newAccount () : Unit = {
         val account:Account = SystemManagement.newAccount
-        notice("new Account created with id" + account.accountId)
+        notice("new Account created with id: " + account.accountId + "of type " + account.concession)
       }
 
       bind("account", xhtml, "submit" -> submit("New Account", newAccount))

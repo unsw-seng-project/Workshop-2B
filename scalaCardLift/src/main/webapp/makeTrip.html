@@ -1,0 +1,29 @@
+<!-- InstanceBegin template="/Templates/main template.dwt" codeOutsideHTMLIsLocked="false" -->
+<lift:surround with="home" at="content">
+	<div id="main">
+<!-- InstanceBeginEditable name="body" -->
+
+	<h1>Trip Interface </h1>
+    
+    <h2>Start Trip </h2>
+    <lift:trip.start form="POST">
+		<LABEL for="deviceID">Access Device ID:</LABEL>
+            	<start:deviceID id="deviceID"/>
+        <LABEL for="entryPoint">Entry Point:</LABEL>
+                <start:accessPoint id="entryPoint" />
+            <start:submit />
+	</lift:trip.start>
+    
+    <h2>End Trip </h2>
+    
+    <lift:trip.end form="POST">
+		<LABEL for="deviceID">Access Device ID:</LABEL>
+            	<end:deviceID id="deviceID"/>
+        <LABEL for="exitPoint">Exit Point:</LABEL>
+                <end:accessPoint id="exitPoint" />
+            <end:submit />
+	</lift:trip.end> 
+
+<!-- InstanceEndEditable -->
+   </div>
+</lift:surround><!-- InstanceEnd -->

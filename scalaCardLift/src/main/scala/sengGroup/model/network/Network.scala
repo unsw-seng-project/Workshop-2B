@@ -12,7 +12,7 @@ object Network {
 
 	val routes : Set[Route] = Set(epList(1) -> exList(1), epList(0) -> exList(0))
 	
-	var fare : Map[Route, Int] = Map()
+	var fare : Map[Route, Int] = Map((epList(1) -> exList(1)) -> 5, (epList(0) -> exList(0)) -> 5)
 	
 	def routeStartsWith(entryPoint:EntryPoint):Boolean = 
 		routes.exists(r => r._1 == (entryPoint))

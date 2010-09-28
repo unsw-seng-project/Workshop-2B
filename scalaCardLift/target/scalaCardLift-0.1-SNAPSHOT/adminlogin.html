@@ -1,0 +1,17 @@
+<!-- InstanceBegin template="/Templates/main template.dwt" codeOutsideHTMLIsLocked="false" -->
+<lift:surround with="home" at="content">
+	<div id="main">
+<!-- InstanceBeginEditable name="body" -->
+
+<h1>Admin Login</h1>
+		<lift:msgs />
+
+<lift:admin.login form="POST">
+		<LABEL for="password">Admin Password</LABEL>
+            	<login:password id="password"/>
+            <login:submit />
+</lift:admin.login>
+
+<!-- InstanceEndEditable -->
+   </div>
+</lift:surround><!-- InstanceEnd -->

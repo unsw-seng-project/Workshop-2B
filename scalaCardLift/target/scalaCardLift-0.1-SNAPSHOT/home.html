@@ -1,0 +1,47 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="validation.js"></script>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+
+</head>
+
+<body class="home">
+	<div id="header">
+		<div id="title"><img src="images/title.png" width="294" height="87" alt="title" />
+          
+        </div>
+  	  <div id="navbar">
+      	<div class="wrapper">
+        	<div class="listContainer">
+        	<ul class="nav">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about">About</a></li>
+           <li> <a href="/myAccount">My Account</a></li>
+            <li><a href="/routes">Routes and Pricing</a></li>
+            <li><a href="/makeTrip">Make Trip</a></li>
+            </ul>
+            </div>
+            <lift:authFunctions.loginStatus>
+            	<div id="loggedStatus"> logged in as : <a href="/login.html"><loggedIn:Login> Login </loggedIn:Login></a> | <a href="/logout.html">Logout </a>
+           		</div>
+            </lift:authFunctions.loginStatus>
+
+        </div>
+	</div>
+    </div>
+	<div id="body">
+     		<lift:bind name="content" />
+	</div>   
+       
+	<div id="footer">  
+    
+    <div id="messages"><lift:msgs>Messages Here</lift:msgs></div>  
+    	<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate lectus sit amet velit vehicula eu rhoncus nunc placerat. Nullam vulputate ornare nunc id faucibus. Vestibulum nec nisi sem. Maecenas pellentesque massa id tellus ullamcorper ultricies. Morbi posuere rhoncus nunc. Integer lobortis enim vel erat aliquet sed bibendum elit consequat. Curabitur vel tellus ipsum, imperdiet suscipit enim. Pellentesque ac tellus ac libero porta sagittis. Morbi feugiat, neque sed porta porta, arcu erat pulvinar eros, quis elementum neque nisi eget turpis. Vestibulum leo enim, varius a malesuada eu, porttitor vitae dui. Duis mi eros, pellentesque eget bibendum eget, pharetra et nunc. In hac habitasse pla;tea dictumst. Phasellus non tristique urna. Etiam molestie, diam ut tristique interdum, mi ligula imperdiet augue, et laoreet neque magna pretium augue. Ut tortor diam, placerat vitae facilisis id, interdum eu arcu. Proin dapibus tortor neque, in rutrum nisi. </p>
+        </div>
+</body>
+</html>

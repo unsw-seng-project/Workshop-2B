@@ -1,0 +1,60 @@
+<!-- InstanceBegin template="/Templates/main template.dwt" codeOutsideHTMLIsLocked="false" -->
+<lift:surround with="home" at="content">
+	<div id="main">
+<!-- InstanceBeginEditable name="body" -->
+
+<h1> Admin Control Panel </h1>
+
+<div id="newAccount">
+<h2> Create Account </h2>
+
+<lift:helloWorld.newAccountForm form="POST">
+			<account:submit />
+</lift:helloWorld.newAccountForm>
+
+</div>
+<div id="loadDb">
+<h2> Reset Database </h2>
+<p> This will reset the database to its orginal condition </p>
+<!-- make sure password is used with submit button -->
+<lift:admin.validate form="POST">
+		<LABEL for="password">Admin Password for confirmation:</LABEL>
+            	<login:password id="password"/>
+            <login:submit />
+</lift:admin.validate>
+</div>
+<div id="changeConcession"></div>
+<h2> Change Concession </h2>
+<p> Please enter the accountId you want to modify </p>
+
+	<lift:admin.changeConcession form="POST">
+    	<LABEL>Account ID:</LABEL><concession:user />
+        <LABEL>Concession:</LABEL><concession:dropDown />
+    	<concession:submit />
+    </lift:admin.changeConcession>
+<div id="changeAccountStatus">
+<h2> Change Status </h2>
+
+	<lift:admin.changeStatus form="POST">
+    	<LABEL>Account ID:</LABEL><s:user />
+        <br />
+        <LABEL>Status:</LABEL><br />
+        <s:radio />
+    	<s:submit />
+    </lift:admin.changeStatus>
+
+</div>
+<div id="banAccessDevice">
+<h2> Ban AccessDevice </h2>
+
+<lift:admin.ban form="POST">
+    	<LABEL>Account ID:</LABEL><s:user /> <br />
+		<LABEL>Device ID:</LABEL><s:device /> <br />
+    	<s:submit />
+    </lift:admin.ban>
+
+</div>
+
+<!-- InstanceEndEditable -->
+   </div>
+</lift:surround><!-- InstanceEnd -->

@@ -1,0 +1,15 @@
+<lift:surround with="home" at="content">
+	<div id="main">
+
+		<h1> Please log in with your accountID </h1>
+      <div>
+        <lift:AuthFunctions.loginAnon form="POST">
+        <login:user />
+        <login:submit />
+        </lift:AuthFunctions.loginAnon>
+    </div> 
+    		<br /><lift:msgs/>
+
+    </div>
+
+</lift:surround>

@@ -1,4 +1,5 @@
 package sengGroup.model.accounts
+import sengGroup.model.ResponseObject
 import sengGroup.model.network._;
 
 object Administrator {
@@ -8,25 +9,34 @@ object Administrator {
 	def penaliseUser (acc:Account):Boolean = {
 		var successful : Boolean = false;
 		if (constants.PENALTYFARE <= (acc.balance - constants.MINBALANCE)) {
+                  println("penalising user " + acc.accountId)
 			acc.balance -= constants.PENALTYFARE
 			successful = true
+                        acc.userEntryPoint = constants.NOENTRY
 		}
 		return successful
 	}
 		
-	def replaceAccessDevice (acc:Account, newAd:AccessDevice):Boolean = {
+	def replaceAccessDevice (acc:Account, ad:AccessDevice):ResponseObject = {
 		var successful : Boolean = false;
+                var message = "";
+                
+                if (SystemManagement.getAccessDevice(acc.accountId).isDefined && acc.accessDevice == ad) {
+                      val newAd:AccessDevice = SystemManagement.newAccessDevice
+
+                      SystemManagement.currentAccessDevices -= ad
+		      SystemManagement.bannedAccessDevices  += ad
+
+                      successful = System.activateDevice(newAd)
+                      SystemManagement.currentAccessDevices += newAd -> acc
+                      acc.accessDevice = newAd
+                      successful = true
+                }
+
+		if (!successful) message = "guards not satisfied"
 		
-		if (!System.currentAccessDevices.contains(newAd)
-				&& !System.bannedAccessDevices.contains(newAd)
-				&& newAd != acc.accessDevice) {
-			System.banAccessDevice(acc.accessDevice)
-			if (System.activateDevice(newAd)) {
-				acc.accessDevice = newAd
-				successful = true
-			}
-		}			
-		return successful
+            	println("replacement worked? " + successful)
+		return new ResponseObject(successful, message)
 
 	}
 }

@@ -1,0 +1,8 @@
+
+<lift:surround with="home" at="content">
+	<div id="main">
+<!-- TemplateBeginEditable name="body" -->
+
+<!-- TemplateEndEditable -->
+   </div>
+</lift:surround>

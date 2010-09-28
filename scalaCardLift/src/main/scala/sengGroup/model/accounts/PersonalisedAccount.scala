@@ -1,5 +1,6 @@
 package sengGroup.model.accounts
 import sengGroup.model.network._
+import sengGroup.model.ResponseObject
 
 class PersonalisedAccount(val acc:Account, 
 	var name:String, var password:String) extends AccountTrait {
@@ -30,25 +31,25 @@ class PersonalisedAccount(val acc:Account,
 	def userEntryPOint = acc.userEntryPoint
 	
 	def setBalance (amount : Int) = acc.setBalance(amount)	
-	def addToBalance (amount : Int):Boolean = {
+	def addToBalance (amount : Int):ResponseObject = {
 		return acc.addToBalance(amount)
 	}
 	
-	def subtractFromBalance (amount : Int):Boolean = {
+	def subtractFromBalance (amount : Int):ResponseObject = {
 		return acc.subtractFromBalance(amount)
 	}
 	
-	def startTrip (entryPoint : EntryPoint):Boolean = {
+	def startTrip (entryPoint : EntryPoint):ResponseObject = {
 		return startTrip(entryPoint : EntryPoint)
 	}
-	def endTrip (exitPoint : ExitPoint):Boolean = {
+	def endTrip (exitPoint : ExitPoint):ResponseObject = {
 		return acc.endTrip(exitPoint : ExitPoint)
 	}
 
-	def changeAccountStatus(newStatus:AccountStatus.AccountStatus):Boolean = {
+	def changeAccountStatus(newStatus:AccountStatus.AccountStatus):ResponseObject = {
 		return acc.changeAccountStatus(newStatus)
 	}
-	def changeConcessionType(newConcession:Concession):Boolean = {
+	def changeConcessionType(newConcession:Concession):ResponseObject = {
 		return acc.changeConcessionType(newConcession)
 	}
 

@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	color:#666666;
+	line-height:1.4em;
+	
+}
+
+
+a:link {
+	color:#F60;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+#myAccount {
+	width:200px;
+	height:300px;
+	float:left;
+	border: 1px solid;
+	padding: 5px;
+	border-color:#cccccc;
+	margin: 20px;
+	text-align:center;
+	margin-right:50px;
+
+}
+
+#accountMenu {
+	border-top:1px solid;
+	border-color:#006699;
+	margin-top:5px;
+	text-align:left;
+	padding:20px;
+}
+
+#accountMenu ul {
+	list-style:none;
+	padding: 0px;
+	text-align:center;
+
+}
+	
+#accountMenu li {
+	height: 30px;
+	padding: 5px;
+	display:block;
+}
+
+#accountMenu a {
+		line-height:30px;
+		display:block;
+		color:#006699;
+		border: 1px solid #ffffff;
+
+}
+	
+#accountMenu a:hover {
+	border: 1px solid;
+}
+
+#main {
+	width:805px;
+	min-width:805px;
+	margin:0 auto;
+	padding: 30px;
+	
+}
+
+
+	
+#body{padding:10px 0;}
+
+#footer, #header, #body {
+	clear:both;
+	margin-left:auto;
+	margin-right:auto;
+	width:980px;
+}
+
+#footer {
+	border-top: 1px solid ;
+	border-color:#CCCCCC;
+	height:200px;
+}
+
+#navbar {
+	background-image:url(images/navbar.png);
+	background-position:top;
+	height:44px;
+	width:981px;
+	padding:0;
+	color:#006699;
+
+}
+
+#navbar .wrapper {
+	padding:4px;
+	
+}
+#navbar .listContainer {
+	float:left;
+}
+
+#navbar ul {
+		vertical-align:middle;
+		padding:0px;
+		margin:0px;
+
+}
+
+#navbar ul a {
+		color:#006699;
+		height:30px;
+		line-height:33px;
+		text-decoration:none;
+
+}
+	
+#navbar ul a:hover {
+	text-decoration:underline;
+}
+
+#navbar .nav li {
+	margin-left:5px;
+	list-style-type:none;
+	display:inline;
+	padding-left: 20px;
+	padding-right: 20px;
+	height:35px;
+	background:inherit;
+	border:inherit;
+
+}
+
+
+#loggedStatus {
+	display:block;
+	float:right;
+	padding-right:20px;
+	line-height: 33px;
+	vertical-align:middle;
+}
+	
+	
+.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+h1 {
+	color: #006699
+}
+
+table {
+	border-collapse: collapse;
+	width: 500px;
+	}
+
+th {
+	border-top: 1px solid #006699;
+	border-bottom: 1px solid #006699;
+	color: #006699;
+}
+td {
+	border-bottom: 1px solid;
+	padding: 0 0.5em;
+	width: 190px;
+	}
+
+td+td {
+	border-left: 1px solid #CCC;
+	text-align: center;
+	}
+
+
+#TripHistory, #addToBalance {display:none}
+
+

@@ -1,0 +1,56 @@
+<lift:surround with="home" at="content">
+ 
+ <div id="myAccount" class="rounded-corners">
+        	<span>my account menu</span>
+            <div id="accountMenu">
+            	<ul>
+                <a  href="#" onclick="javascript:toggle('main','details');"><li>Account Details </li></a>
+                <a href=""><li>Personal Details </li></a>
+                <a  href="#" onclick="javascript:toggle('main','addToBalance');"><li>Add Money </li></a>
+                <a  href="#" onclick="javascript:toggle('main','TripHistory');"><li>Travel History </li></a>
+                </ul>
+                
+            </div> 
+   </div>
+   <div id="main">
+        <div id="details">
+        <h1> Account Details </h1>
+        <lift:userAccount.accountDetails>
+        <p>Account ID: <accDetails:accountID /></p>
+        <p>Access Device ID: <accDetails:deviceID /></p>
+        <p>Balance: <accDetails:balance /></p>
+        <p>Entry Location: <accDetails:LastTrip /></p>
+        <p>Number of Trips: <accDetails:NumberofTrips /></p>
+        <p>CurrentStatus: <accDetails:status /></p>
+        </lift:userAccount.accountDetails>
+		</div>
+        <div id="addToBalance">
+                <h1>Add To Balance </h1>
+
+        	<lift:userAccount.addToBalance form="POST">
+			CurrentBalance: $<add:current /> <br />
+            <add:newAmount />
+            <add:submit />
+		 	</lift:userAccount.addToBalance>
+        </div>
+        <div id="TripHistory">
+
+		<h1>Trip History</h1>
+        <table>
+        	<tr>
+            <th>Date</th><th>Entry Point</th><th>ExitPoint</th><th>Cost</th>
+            </tr>
+            <lift:userAccount.tripHistory>
+            <tr>
+            <td><r:date /></td><td><r:entry /></td><td><r:exit /></td><td><r:cost /></td>
+            </tr>
+            </lift:userAccount.tripHistory>
+
+        </table>
+        
+        </div>
+    </div>
+        
+        
+
+</lift:surround>

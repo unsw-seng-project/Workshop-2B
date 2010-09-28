@@ -44,6 +44,7 @@ class AppTest extends TestCase("app") {
       file.endsWith(".html") || file.endsWith(".htm") || file.endsWith(".xhtml")
 
     def wellFormed(file: File) {
+      println(file.getName.toString);
       if (file.isDirectory)
         for (f <- file.listFiles) wellFormed(f)
 

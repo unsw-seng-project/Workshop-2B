@@ -1,5 +1,7 @@
 package sengGroup.model.accounts
 import sengGroup.model.network._;
+import sengGroup.model.ResponseObject
+
 
 class Account (var accessDevice : AccessDevice, val accountId : Int) {
 	type Concession = String
@@ -16,81 +18,98 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 	var travelHistory : List[TravelRecord] = List()
 	//def getTravelHistory = travelHistory
 	
-	var userEntryPoint: EntryPoint = _
+	var userEntryPoint: EntryPoint = constants.NOENTRY
 	//def getUserEntryPOint = userEntryPoint
 	
 	def setBalance (amount : Int){ balance = amount}
 	
-	def addToBalance (amount : Int):Boolean = {
+	def addToBalance (amount : Int):ResponseObject = {
 		var successful : Boolean = false
+                var message: String = ""
+
 		if (!System.currentAccessDevices.contains(accessDevice)
 				&& balance + amount <= constants.MAXBALANCE
 				&& status == AccountStatus.Enabled) {
 			balance += amount
 			successful = true
 		}
-		return successful
+		if (!successful) message = "error adding to balance"
+		return new ResponseObject(successful, message)
 	}
 	
-	def subtractFromBalance (amount : Int):Boolean = {
+	def subtractFromBalance (amount : Int):ResponseObject = {
 		var successful : Boolean = false
+                var message: String = ""
 		if (!System.currentAccessDevices.contains(accessDevice)
 				&& balance - amount >= constants.MINBALANCE
 				&& status == AccountStatus.Enabled) {
 			balance -= amount
 			successful = true
 		}
-		return successful
+                if (!successful) message = "error subtracting from balance"
+		return new ResponseObject(successful, message)
 	}
 	
-	def startTrip (entryPoint : EntryPoint):Boolean = {
+	def startTrip (entryPoint : EntryPoint):ResponseObject = {
 		var successful : Boolean = false;
+                var message: String = ""
+
 		if (Network.routeStartsWith(entryPoint)
-				&& userEntryPoint == null
+				&& userEntryPoint == constants.NOENTRY
 				&& !System.currentAccessDevices.contains(accessDevice)
 				&& balance >= constants.MINBALANCE + constants.PENALTYFARE
 				&& status == AccountStatus.Enabled) {
 			userEntryPoint = entryPoint
 			successful = true
 		}
+                if (!successful) message = "error starting Trip at account level"
+		return new ResponseObject(successful, message)
 		
-		return successful
 	}
-	def endTrip (exitPoint : ExitPoint):Boolean = {
+	def endTrip (exitPoint : ExitPoint):ResponseObject = {
 		var successful : Boolean = false;
+                var message: String = ""
 		val route = userEntryPoint -> exitPoint
 		if (Network.routes.contains(route)
 				&& !System.currentAccessDevices.contains(accessDevice)
 				&& usersFare(route) <= (balance - constants.MINBALANCE)
 				&& status == AccountStatus.Enabled) {
 			
-			travelHistory :: List(TravelRecordFactory.newRecord(route, usersFare(route)))
+			travelHistory =  TravelRecordFactory.newRecord(route, usersFare(route)) :: travelHistory
 			balance -= usersFare(route)
-			userEntryPoint = null
+			userEntryPoint = constants.NOENTRY
+
 			successful = true
 		}
-		return successful
+		if (!successful) message = "error ending Trip"
+		return new ResponseObject(successful, message)
 	}
 	
 	private def usersFare(route:(EntryPoint,ExitPoint)): Int = {
-		return (Network.fare(route) + System.concessionRate(concession))
+		return (Network.fare(route) - System.concessionRate(concession))
 	}
 
-	def changeAccountStatus(newStatus:AccountStatus.AccountStatus):Boolean = {
+	def changeAccountStatus(newStatus:AccountStatus.AccountStatus):ResponseObject = {
 		var successful : Boolean = false;
+                 var message: String = ""
+
 		if (newStatus != status) {
 			status = newStatus
 			successful = true
 		}
-		return successful
-	}
+		if (!successful) message = "error changing status"
+		return new ResponseObject(successful, message)
+              }
 	
-	def changeConcessionType(newConcession:Concession):Boolean = {
+	def changeConcessionType(newConcession:Concession):ResponseObject = {
 		var successful : Boolean = false;
+                var message: String = ""
+
 		if (newConcession != concession) {
 			concession = newConcession
 			successful = true
 		}
-		return successful
-	}
+		if (!successful) message = "error changing concession"
+		return new ResponseObject(successful, message)
+              }
 }
