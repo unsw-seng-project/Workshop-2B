@@ -18,7 +18,7 @@ class Boot {
     // where to search snippet
     LiftRules.addToPackages("sengGroup")
 
-
+   
    val AuthRequired = If(() => isLoggedIn.get,
                                        () => RedirectResponse("/login"))
 

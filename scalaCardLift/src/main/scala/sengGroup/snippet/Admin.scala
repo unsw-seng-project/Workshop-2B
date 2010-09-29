@@ -45,20 +45,20 @@
            "submit"  ->  SHtml.submit("Login",  auth))
     }
 
-    def  validate(xhtml  :  NodeSeq)  :  NodeSeq  =  {
-      var  pass  =  "";
-      def  auth  ()  =  {
-        if (Administrator.adminPassword.equals(pass)) {
-          //reload database now
-          S.notice("Database Reset")
+    def  forceLogout(xhtml  :  NodeSeq)  :  NodeSeq  =  {
+      var  user  =  "";
+      def  logoutUser  ()  =  {
+        if (SystemManagement.accountExists(user.toInt)) {
+          SystemManagement.getAccount(user.toInt).get.isLoggedInSomewhere = false
+          S.notice("User Logged Out")
         } else {
-          S.error("Admin Password Incorrect");
+          S.error("User doesn't exist");
         }
 
       }
       bind("login",  xhtml,
-           "password"  ->  SHtml.password(pass,  pass  =  _),
-           "submit"  ->  SHtml.submit("Reset",  auth))
+           "userID"  ->  SHtml.text(user,  user  =  _),
+           "submit"  ->  SHtml.submit("Reset",  logoutUser))
     }
 
     def changeConcession (xhtml : NodeSeq) : NodeSeq = {

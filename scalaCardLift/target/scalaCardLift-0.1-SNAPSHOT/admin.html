@@ -14,14 +14,14 @@
 
 </div>
 <div id="loadDb">
-<h2> Reset Database </h2>
-<p> This will reset the database to its orginal condition </p>
+<h2> Logout User </h2>
+<p> This will allow a user to log in again, though wont end thier previous session </p>
 <!-- make sure password is used with submit button -->
-<lift:admin.validate form="POST">
-		<LABEL for="password">Admin Password for confirmation:</LABEL>
-            	<login:password id="password"/>
+<lift:admin.forceLogout form="POST">
+		<LABEL for="userID">userID:</LABEL>
+            	<login:userID id="userID"/>
             <login:submit />
-</lift:admin.validate>
+</lift:admin.forceLogout>
 </div>
 <div id="changeConcession"></div>
 <h2> Change Concession </h2>

@@ -62,7 +62,6 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 
 		if (Network.routeStartsWith(entryPoint)
 				&& userEntryPoint == constants.NOENTRY
-				&& !System.currentAccessDevices.contains(accessDevice)
 				&& balance >= constants.MINBALANCE + constants.PENALTYFARE
 				&& status == AccountStatus.Enabled) {
 			userEntryPoint = entryPoint
@@ -77,7 +76,6 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
                 var message: String = ""
 		val route = userEntryPoint -> exitPoint
 		if (Network.routes.contains(route)
-				&& !System.currentAccessDevices.contains(accessDevice)
 				&& usersFare(route) <= (balance - constants.MINBALANCE)
 				&& status == AccountStatus.Enabled) {
 			

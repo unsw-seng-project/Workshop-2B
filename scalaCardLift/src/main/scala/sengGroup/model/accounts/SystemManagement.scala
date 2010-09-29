@@ -7,10 +7,6 @@ import sengGroup.model.ResponseObject
 
 
 object authSessionVar extends SessionVar[Int](0) {
-   registerGlobalCleanupFunc(ignore => {
-       println("Logging out")
-       SystemManagement.getAccount(authSessionVar.is).get.isLoggedInSomewhere = false
-   })
 
 }
 object isLoggedIn extends SessionVar[Boolean](false);
@@ -108,6 +104,7 @@ object SystemManagement {
               ro = getAccount(accessDevice).get.endTrip(exitPoint)
               success = true
             }
+            else ro = new ResponseObject(success, "start a journey first")
           }
           else ro = new ResponseObject(success, "error ending trip")
           return ro

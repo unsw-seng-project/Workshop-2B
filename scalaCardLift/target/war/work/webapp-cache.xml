@@ -92,6 +92,8 @@
           <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$changeConcession$4.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$changeStatus$1.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$changeStatus$2.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$forceLogout$1.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$forceLogout$2.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$login$1.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$login$2.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/Admin$$anonfun$validate$1.class</string>
