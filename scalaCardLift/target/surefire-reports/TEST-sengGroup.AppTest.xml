@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.517" errors="0" skipped="0" tests="2" name="sengGroup.AppTest">
+<testsuite failures="0" time="1.326" errors="0" skipped="0" tests="2" name="sengGroup.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Java\jdk1.6.0_16\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="C:\Users\Joseph\Documents\CSE-2010\se2020\Development\Workshop-2B\scalaCardLift"/>
     <property name="java.endorsed.dirs" value="C:\Java\jdk1.6.0_16\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="C:\Users\Joseph\AppData\Local\Temp\surefirebooter1426659750919683251.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Joseph\AppData\Local\Temp\surefirebooter5943709532395203331.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\Joseph\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -59,6 +59,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="1.476" classname="sengGroup.AppTest" name="testXml"/>
+  <testcase time="1.306" classname="sengGroup.AppTest" name="testXml"/>
   <testcase time="0" classname="sengGroup.AppTest" name="testOK"/>
 </testsuite>

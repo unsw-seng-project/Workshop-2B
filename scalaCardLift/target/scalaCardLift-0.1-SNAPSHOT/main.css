@@ -25,4 +25,3 @@ table{border-collapse:collapse;width:500px;}
 th{border-top:1px solid #069;border-bottom:1px solid #069;color:#069;}
 td{border-bottom:1px solid;padding:0 .5em;width:190px;}
 td+td{border-left:1px solid #CCC;text-align:center;}
-#TripHistory,#addToBalance{display:none;}

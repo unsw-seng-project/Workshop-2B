@@ -1,0 +1,21 @@
+<lift:surround with="home" at="content">
+ 
+ <div id="myAccount" class="rounded-corners">
+        	<span>my account menu</span>
+            <div id="accountMenu">
+            	<ul>
+                <a  href="details.html"><li>Account Details </li></a>
+                <a href="personal.html"><li>Personal Details </li></a>
+                <a  href="addToBalance.html"><li>Add Money </li></a>
+                <a  href="tripHistory.html"><li>Travel History </li></a>
+                </ul>
+                
+            </div> 
+   </div>
+   <div id="main">
+       <lift:bind name="account" />
+    </div>
+        
+        
+
+</lift:surround>

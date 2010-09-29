@@ -1,0 +1,23 @@
+
+<lift:surround with="/account/myAccount" at="account">
+
+       <div id="TripHistory">
+
+		<h1>Trip History</h1>
+        <table>
+        	<tr>
+            <th>Date</th><th>Entry Point</th><th>ExitPoint</th><th>Cost</th>
+            </tr>
+            <lift:userAccount.tripHistory>
+            <tr>
+            <td><r:date /></td><td><r:entry /></td><td><r:exit /></td><td><r:cost /></td>
+            </tr>
+            </lift:userAccount.tripHistory>
+
+        </table>
+        
+        </div>
+ 
+        
+
+   </lift:surround>

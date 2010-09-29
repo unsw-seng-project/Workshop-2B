@@ -4,6 +4,12 @@
       <string>currentBuild</string>
       <path-set>
         <pathsSet class="linked-hash-set">
+          <string>account/addToBalance.html</string>
+          <string>account/details.html</string>
+          <string>account/myAccount.html</string>
+          <string>account/personal.html</string>
+          <string>account/personalLogin.html</string>
+          <string>account/tripHistory.html</string>
           <string>admin.html</string>
           <string>adminlogin.html</string>
           <string>home.html</string>
@@ -15,7 +21,6 @@
           <string>logout.html</string>
           <string>main.css</string>
           <string>makeTrip.html</string>
-          <string>myAccount.html</string>
           <string>Routes.html</string>
           <string>Templates/main template.dwt</string>
           <string>templates-hidden/default.html</string>
@@ -26,6 +31,8 @@
           <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$11.class</string>
           <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$12.class</string>
           <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$13.class</string>
+          <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$14.class</string>
+          <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$15.class</string>
           <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$2.class</string>
           <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$3.class</string>
           <string>WEB-INF/classes/bootstrap/liftweb/Boot$$anonfun$4.class</string>
@@ -43,6 +50,7 @@
           <string>WEB-INF/classes/sengGroup/model/accounts/Administrator$.class</string>
           <string>WEB-INF/classes/sengGroup/model/accounts/Administrator.class</string>
           <string>WEB-INF/classes/sengGroup/model/accounts/authSessionVar$$anonfun$$init$$1.class</string>
+          <string>WEB-INF/classes/sengGroup/model/accounts/authSessionVar$$anonfun$1.class</string>
           <string>WEB-INF/classes/sengGroup/model/accounts/authSessionVar$.class</string>
           <string>WEB-INF/classes/sengGroup/model/accounts/authSessionVar.class</string>
           <string>WEB-INF/classes/sengGroup/model/accounts/Concession.class</string>
@@ -119,7 +127,20 @@
           <string>WEB-INF/classes/sengGroup/snippet/Trip.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$addToBalance$1.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$addToBalance$2.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$changePassword$1.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$changePassword$2.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$changePassword$3.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$newAccountForm$1.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personal$1.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personal$2.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personal$3.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personal$4.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personalLogin$1.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personalLogin$2.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personalLogin$3.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personalLogin$4.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personalLogin$5.class</string>
+          <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$personalLogin$6.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/UserAccount$$anonfun$tripHistory$1.class</string>
           <string>WEB-INF/classes/sengGroup/snippet/UserAccount.class</string>
           <string>WEB-INF/lib/scala-library-2.7.3.jar</string>

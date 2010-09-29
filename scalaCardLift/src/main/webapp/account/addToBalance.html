@@ -1,0 +1,15 @@
+
+<lift:surround with="/account/myAccount" at="account">
+
+       <div id="addToBalance">
+                <h1>Add To Balance </h1>
+
+        	<lift:userAccount.addToBalance form="POST">
+			CurrentBalance: $<add:current /> <br />
+            <add:newAmount />
+            <add:submit />
+		 	</lift:userAccount.addToBalance>
+        </div>
+        
+
+   </lift:surround>

@@ -4,8 +4,11 @@ import sengGroup.model.ResponseObject
 
 
 class Account (var accessDevice : AccessDevice, val accountId : Int) {
+
 	type Concession = String
-	
+
+        var isLoggedInSomewhere :Boolean = false;
+
 	var concession : Concession = "Student"
 	//def getConcession = concession
 		
@@ -20,7 +23,10 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 	
 	var userEntryPoint: EntryPoint = constants.NOENTRY
 	//def getUserEntryPOint = userEntryPoint
-	
+
+       var isPersonalAccount:Boolean = false
+
+
 	def setBalance (amount : Int){ balance = amount}
 	
 	def addToBalance (amount : Int):ResponseObject = {
@@ -111,5 +117,37 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 		}
 		if (!successful) message = "error changing concession"
 		return new ResponseObject(successful, message)
-              }
+        }
+
+
+  //personal account stuff
+        var name:String = ""
+        var password:String = ""
+        var address:String = ""
+
+	def changePassword (newPassword:String) = {
+		password = newPassword
+	}
+
+	def changePersonalDetails (newName:String, pass:String, newAddress:String):Boolean = {
+		var successful : Boolean = false
+		if (pass.equals(password) && status == AccountStatus.Enabled) {
+			name = newName
+                        address = newAddress
+                        successful = true
+		}
+                return successful
+	}
+
+        def upgrade (newName:String, pass:String, address:String):Boolean = {
+		var successful : Boolean = false
+		if (status == AccountStatus.Enabled && !isPersonalAccount) {
+			name = newName
+                        password = pass
+                        successful = true
+                        isPersonalAccount = true
+		}
+                return successful
+
+	}
 }

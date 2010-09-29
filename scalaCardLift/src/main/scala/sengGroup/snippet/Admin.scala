@@ -25,7 +25,7 @@
 
     def logout(xhtml : NodeSeq) : NodeSeq = {
       adminLoggedIn.set(false)
-      S.redirectTo("/home")
+      S.redirectTo("home")
     }
 
     def  login(xhtml  :  NodeSeq)  :  NodeSeq  =  {
@@ -33,7 +33,7 @@
       def  auth  ()  =  {
         if (Administrator.adminPassword.equals(pass)) {
           adminLoggedIn.set(true)
-          S.redirectTo("/admin.html")
+          S.redirectTo("Admin")
 
         } else {
           S.error("Admin Password Incorrect");

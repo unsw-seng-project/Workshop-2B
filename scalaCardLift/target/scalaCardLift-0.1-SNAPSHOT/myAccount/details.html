@@ -1,0 +1,23 @@
+<!-- InstanceBegin template="/Templates/main template.dwt" codeOutsideHTMLIsLocked="false" -->
+<lift:surround with="home" at="content">
+	<div id="main">
+<!-- InstanceBeginEditable name="body" -->
+<lift:surround with="myAccount" at="account">
+
+ <div id="details">
+        <h1> Account Details </h1>
+        <lift:userAccount.accountDetails>
+        <p>Account ID: <accDetails:accountID /></p>
+        <p>Access Device ID: <accDetails:deviceID /></p>
+        <p>Balance: <accDetails:balance /></p>
+        <p>ConcessionType: <accDetails:concession /> </p>
+        <p>Entry Location: <accDetails:LastTrip /></p>
+        <p>Number of Trips: <accDetails:NumberofTrips /></p>
+        <p>CurrentStatus: <accDetails:status /></p>
+        </lift:userAccount.accountDetails>
+</div>
+ 
+   </lift:surround>
+<!-- InstanceEndEditable -->
+   </div>
+</lift:surround><!-- InstanceEnd -->

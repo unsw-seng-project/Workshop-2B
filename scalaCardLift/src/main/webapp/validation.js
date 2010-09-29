@@ -11,14 +11,3 @@ function checkIt(evt) {
     return true
 }
 
-
-function toggle(mainDiv, showHideDiv) {
-	var ele = document.getElementById(showHideDiv)
-	var divs = document.getElementById(mainDiv).childNodes
-	
-	document.getElementById("details").style.display="none"
-	document.getElementById("TripHistory").style.display="none"
-	document.getElementById("addToBalance").style.display="none"
-
-	ele.style.display = "block";
-}

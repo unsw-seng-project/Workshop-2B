@@ -6,7 +6,13 @@ import sengGroup.model.network._
 import sengGroup.model.ResponseObject
 
 
-object authSessionVar extends SessionVar[Int](0);
+object authSessionVar extends SessionVar[Int](0) {
+   registerGlobalCleanupFunc(ignore => {
+       println("Logging out")
+       SystemManagement.getAccount(authSessionVar.is).get.isLoggedInSomewhere = false
+   })
+
+}
 object isLoggedIn extends SessionVar[Boolean](false);
 
 object SystemManagement {
@@ -21,7 +27,6 @@ object SystemManagement {
 	
 	var accounts : Set[Account] = Set()
 	
-	val statusTypes : Set[String] = setUpStatusMapping
 	val concessionRate : Map[String, Int] 
 	                      = Map("Student"->5,
 	                     		  "Adult"->10,
@@ -49,12 +54,26 @@ object SystemManagement {
 	}
 	                     		  
 	
-	def setUpStatusMapping : Set[String] = {
-		var set : Set[String] = Set()
-		set + "Enabled"
-		set + "Disabled"
-		return set
-	}
+	def upgrade (ad:AccessDevice, name:String, password:String, address:String) = {
+          if (accountExists(ad) && !getAccount(ad).get.isPersonalAccount) {
+            getAccount(ad).get.upgrade(name, password, address)
+          }
+        }
+
+        def changeDetails (ad:AccessDevice, name:String, password:String, address:String) = {
+          if (accountExists(ad) && getAccount(ad).get.isPersonalAccount) {
+            if (password != getAccount(ad).get.password)
+              getAccount(ad).get.changePersonalDetails(name, password,  address)
+          }
+        }
+
+        def changePassword (ad:AccessDevice, oldPassword:String, newPassword:String) = {
+          if (accountExists(ad) && getAccount(ad).get.isPersonalAccount) {
+            if (oldPassword == getAccount(ad).get.password)
+              getAccount(ad).get.changePassword(newPassword)
+          }
+        }
+
 
         def accountExists(accountID : Int) : Boolean = accounts.exists(x => x.accountId == accountID)
 

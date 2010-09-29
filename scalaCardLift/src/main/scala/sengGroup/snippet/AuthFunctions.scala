@@ -22,10 +22,14 @@ import S._
 class AuthFunctions {
 
    def  logout  ()  :  Box[LiftResponse] = {
+      if(authSessionVar.is != 0) {
+        SystemManagement.getAccount(authSessionVar.is).get.isLoggedInSomewhere = false;
+      }
       authSessionVar.remove();
+
       isLoggedIn.set(false)
       //redirect to home
-      return Full(RedirectResponse("/logout.html"));
+      return Full(RedirectResponse("Logout"));
 
     }
     def loginStatus(xhtml: NodeSeq): NodeSeq = {
@@ -42,9 +46,14 @@ class AuthFunctions {
       var  user  =  "";
       def  auth  ()  =  {
         if (SystemManagement.accountExists(user.toInt)) {
-          authSessionVar.set(user.toInt)
-          isLoggedIn.set(true)
-          S.redirectTo("/myAccount.html")
+          if (!SystemManagement.getAccount(user.toInt).get.isLoggedInSomewhere) {
+            authSessionVar.set(user.toInt)
+            var currentUser =  SystemManagement.getAccount(authSessionVar.is).get
+            isLoggedIn.set(true)
+            currentUser.isLoggedInSomewhere = true;
+            S.redirectTo("account/details")
+          }
+          else S.error("You are already logged in")
 
         } else {
           S.error("User Does not Exist");

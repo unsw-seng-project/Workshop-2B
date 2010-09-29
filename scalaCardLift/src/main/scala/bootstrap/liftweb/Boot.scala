@@ -20,19 +20,22 @@ class Boot {
 
 
    val AuthRequired = If(() => isLoggedIn.get,
-                                       () => RedirectResponse("login"))
+                                       () => RedirectResponse("/login"))
+
+   val AuthNotRequired = If(() => !isLoggedIn.get,
+                                       () => RedirectResponse("/index"))
 
     val AdminOnly = If(() => adminLoggedIn.get,
-                                       () => RedirectResponse("adminlogin"))
+                                       () => RedirectResponse("/adminlogin"))
 
 
      //   println("not logged in " + (authSessionVar.get))
 
     // Build SiteMap
     val entries = Menu(Loc("Home", List("index"), "Home")) ::
-                  Menu(Loc("Account", List("myAccount"), "Account", AuthRequired)) ::
+                  Menu(Loc("Account", List("account") -> true, "Account", AuthRequired)) ::
                   Menu(Loc("Logout", List("logout"), "Logout"))::
-                  Menu(Loc("Login", List("login"), "Login"))::
+                  Menu(Loc("Login", List("login"), "Login", AuthNotRequired))::
                   Menu(Loc("AdminLogin", List("adminlogin"), "AdminLogin"))::
                   Menu(Loc("AdminLogout", List("adminlogout"), "AdminLogout"))::
                   Menu(Loc("Admin", List("admin"), "Admin"))::

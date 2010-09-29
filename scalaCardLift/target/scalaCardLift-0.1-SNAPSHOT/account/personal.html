@@ -1,0 +1,14 @@
+
+<lift:surround with="/account/myAccount" at="account">
+
+               <div id="personal">
+        		<h1>Personal Details Management </h1>
+                <p><lift:snippet type="userAccount:personal" form="post" /></p>
+                
+                <h2> Change Password </h2>
+                <lift:snippet type="userAccount:changePassword" form="post" />
+                </div>
+ 
+        
+
+   </lift:surround>

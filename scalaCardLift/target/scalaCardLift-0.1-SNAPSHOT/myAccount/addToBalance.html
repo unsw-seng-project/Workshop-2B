@@ -1,0 +1,21 @@
+<!-- InstanceBegin template="/Templates/main template.dwt" codeOutsideHTMLIsLocked="false" -->
+<lift:surround with="home" at="content">
+	<div id="main">
+<!-- InstanceBeginEditable name="body" -->
+<lift:surround with="myAccount" at="account">
+
+       <div id="addToBalance">
+                <h1>Add To Balance </h1>
+
+        	<lift:userAccount.addToBalance form="POST">
+			CurrentBalance: $<add:current /> <br />
+            <add:newAmount />
+            <add:submit />
+		 	</lift:userAccount.addToBalance>
+        </div>
+        
+
+   </lift:surround>
+<!-- InstanceEndEditable -->
+   </div>
+</lift:surround><!-- InstanceEnd -->
