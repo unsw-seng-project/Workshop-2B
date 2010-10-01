@@ -5,6 +5,7 @@
 
  package sengGroup.snippet
 
+import _root_.sengGroup.model.ResponseObject
  import _root_.sengGroup.model.network._
  import _root_.sengGroup.model.accounts._
  import net.liftweb.http.SessionVar;
@@ -64,26 +65,26 @@
     def changeConcession (xhtml : NodeSeq) : NodeSeq = {
 
       var chosenMethod: Box[String] = Full(SystemManagement.concessionRate.keys.next())
-      var user: String = "";
+      var ad: String = "";
 
 
       def processForm () : Unit = {
-        if (SystemManagement.accountExists(user.toInt) && chosenMethod.isDefined) {
-          println("changing concession of: " + user.toInt +" from " 
-                  + SystemManagement.getAccount(user.toInt).get.concession + " to " + chosenMethod.open_!)
+        var ro = new ResponseObject(false, "")
+        if (SystemManagement.getAccessDevice(ad.toInt).isDefined) {
+          println("changing concession of: " + ad.toInt  + " to " + chosenMethod.open_!)
 
-          SystemManagement.getAccount(user.toInt).get.concession = chosenMethod.open_!
-          S.notice("Concession Updated")
+          ro = SystemManagement.changeConcessionType(SystemManagement.getAccessDevice(ad.toInt).get, chosenMethod.open_!)
+          S.notice(ro.errorMessage)
 
         } else {
-          S.error("User Does not Exist");
+          S.error(ro.errorMessage);
         }
 
 
       } //some form manipulation stuff
 
       bind("concession", xhtml,
-           "user"  ->  SHtml.text(user,  user  =  _,  "maxlength"  ->  "40"),
+           "user"  ->  SHtml.text(ad,  ad  =  _,  "maxlength"  ->  "40"),
            "dropDown" -> SHtml.selectObj[String](
           SystemManagement.concessionRate.keys.toList.map(v => (v,v.toString)),
           Empty, selected => chosenMethod = Full(selected) ),
@@ -94,7 +95,7 @@
      def changeStatus (xhtml : NodeSeq) : NodeSeq = {
 
       var chosenMethod: Box[AccountStatus.Value] = Full(AccountStatus.Enabled)
-      var user: String = "";
+      var ad: String = "";
 
       val radios =
       SHtml.radio( AccountStatus.elements.toList.map(_.toString), Empty,
@@ -103,20 +104,20 @@
 
 
       def processForm () : Unit = {
-        if (SystemManagement.accountExists(user.toInt)) {
-          println("changing status of: " + user.toInt +" from "
-                  + SystemManagement.getAccount(user.toInt).get.status + " to " + chosenMethod.open_!)
+        var ro = new ResponseObject(false, "")
+        if (SystemManagement.getAccessDevice(ad.toInt).isDefined) {
+          println("changing status of device: " + ad.toInt + " to " + chosenMethod.open_!)
 
-          SystemManagement.getAccount(user.toInt).get.status = chosenMethod.open_!
-          S.notice("Status Updated")
+          ro = SystemManagement.changeAccountStatus(SystemManagement.getAccessDevice(ad.toInt).get, chosenMethod.open_!)
+          S.notice(ro.errorMessage)
 
         } else {
-          S.error("User Does not Exist");
+          S.error(ro.errorMessage);
         }
       } //some form manipulation stuff
 
       bind("s", xhtml,
-           "user"  ->  SHtml.text(user,  user  =  _,  "maxlength"  ->  "40"),
+           "user"  ->  SHtml.text(ad,  ad  =  _,  "maxlength"  ->  "40"),
            "radio" -> radios.toForm,
            "submit" -> SHtml.submit( "Change Status" /*button name*/,
             processForm /*function to call*/)

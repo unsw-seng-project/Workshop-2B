@@ -59,63 +59,46 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 	def startTrip (entryPoint : EntryPoint):ResponseObject = {
 		var successful : Boolean = false;
                 var message: String = ""
+                var ro : ResponseObject = new ResponseObject(false,"")
 
-		if (Network.routeStartsWith(entryPoint)
-				&& userEntryPoint == constants.NOENTRY
-				&& balance >= constants.MINBALANCE + constants.PENALTYFARE
-				&& status == AccountStatus.Enabled) {
+		if (!Network.routeStartsWith(entryPoint)) ro = new ResponseObject(false, "Not a valid entry location")
+		if (userEntryPoint != constants.NOENTRY) ro = new ResponseObject(false, "User already travelling")
+		if (balance < constants.MINBALANCE + constants.PENALTYFARE) ro = new ResponseObject(false, "Not enough money")
+		if (status != AccountStatus.Enabled) ro = new ResponseObject(false, "Acount is disabled")
+
+                else {
 			userEntryPoint = entryPoint
-			successful = true
+			ro = new ResponseObject(true, "Trip started successfully")
 		}
-                if (!successful) message = "error starting Trip at account level"
-		return new ResponseObject(successful, message)
+		return ro
 		
 	}
 	def endTrip (exitPoint : ExitPoint):ResponseObject = {
 		var successful : Boolean = false;
                 var message: String = ""
 		val route = userEntryPoint -> exitPoint
-		if (Network.routes.contains(route)
-				&& usersFare(route) <= (balance - constants.MINBALANCE)
-				&& status == AccountStatus.Enabled) {
+                var ro : ResponseObject = new ResponseObject(false,"")
+
+		if (!Network.routes.contains(route)) ro = new ResponseObject(false, "Exit not connected to your entry point")
+		if (usersFare(route) > (balance - constants.MINBALANCE)) ro = new ResponseObject(false, "Not enough money to finish trip")
+		if (status != AccountStatus.Enabled) ro = new ResponseObject(false, "Acount is disabled")
+
+                else {
 			
 			travelHistory =  TravelRecordFactory.newRecord(route, usersFare(route)) :: travelHistory
 			balance -= usersFare(route)
 			userEntryPoint = constants.NOENTRY
 
-			successful = true
+			ro = new ResponseObject(true, "Trip completed successfully")
 		}
-		if (!successful) message = "error ending Trip"
-		return new ResponseObject(successful, message)
+		return ro
 	}
 	
 	private def usersFare(route:(EntryPoint,ExitPoint)): Int = {
 		return (Network.fare(route) - System.concessionRate(concession))
 	}
 
-	def changeAccountStatus(newStatus:AccountStatus.AccountStatus):ResponseObject = {
-		var successful : Boolean = false;
-                 var message: String = ""
 
-		if (newStatus != status) {
-			status = newStatus
-			successful = true
-		}
-		if (!successful) message = "error changing status"
-		return new ResponseObject(successful, message)
-              }
-	
-	def changeConcessionType(newConcession:Concession):ResponseObject = {
-		var successful : Boolean = false;
-                var message: String = ""
-
-		if (newConcession != concession) {
-			concession = newConcession
-			successful = true
-		}
-		if (!successful) message = "error changing concession"
-		return new ResponseObject(successful, message)
-        }
 
 
   //personal account stuff

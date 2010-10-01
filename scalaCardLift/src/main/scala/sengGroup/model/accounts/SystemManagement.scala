@@ -85,29 +85,56 @@ object SystemManagement {
 
         def startTrip (accessDevice : AccessDevice, entryPoint:EntryPoint) : ResponseObject = {
           var success = false;
-          var ro:ResponseObject = new ResponseObject(success, "");
-          if (currentAccessDevices.isDefinedAt(accessDevice)) {
-            if (getAccount(accessDevice).get.userEntryPoint != constants.NOENTRY) Administrator.penaliseUser(getAccount(accessDevice).get)
-
+          var ro:ResponseObject = new ResponseObject(success, "Access Device not defined");
+          if (currentAccessDevices.contains(accessDevice)) {
+            if (getAccount(accessDevice).get.userEntryPoint != constants.NOENTRY) {
+              Administrator.penaliseUser(getAccount(accessDevice).get)
+            }
             ro = getAccount(accessDevice).get.startTrip(entryPoint)
             success = true
           } 
-          else ro = new ResponseObject(success, "error starting trip")
           return ro
         }
 
        def endTrip (accessDevice : AccessDevice, exitPoint:ExitPoint) : ResponseObject = {
           var success = false;
-          var ro:ResponseObject = new ResponseObject(success, "");
-          if (currentAccessDevices.isDefinedAt(accessDevice)) {
-            if (getAccount(accessDevice).get.userEntryPoint != constants.NOENTRY) {
+          var ro:ResponseObject = new ResponseObject(success, "Access Device not defined");
+          if (currentAccessDevices.contains(accessDevice)) {
               ro = getAccount(accessDevice).get.endTrip(exitPoint)
               success = true
-            }
-            else ro = new ResponseObject(success, "start a journey first")
           }
-          else ro = new ResponseObject(success, "error ending trip")
           return ro
+        }
+
+        def changeAccountStatus(accessDevice:AccessDevice, newStatus:AccountStatus.AccountStatus):ResponseObject = {
+             var successful : Boolean = false;
+             var message: String = ""
+
+              if (!currentAccessDevices.contains(accessDevice)) message = "Access Device not defined"
+              if (newStatus == currentAccessDevices(accessDevice).status) message = "error changing status"
+
+              else {
+                currentAccessDevices(accessDevice).status = newStatus
+                successful = true
+                message = "status updated"
+              }
+
+              return new ResponseObject(successful, message)
+        }
+
+	def changeConcessionType(accessDevice:AccessDevice, newConcession:Concession):ResponseObject = {
+		var successful : Boolean = false;
+                var message: String = ""
+
+                if (!currentAccessDevices.contains(accessDevice)) message = "Access Device not defined"
+		if (newConcession == currentAccessDevices(accessDevice).concession) message = "error changing concession"
+
+                else {
+                  currentAccessDevices(accessDevice).concession = newConcession
+		  successful = true
+                  message = "concession updated"
+		}
+		return new ResponseObject(successful, message)
         }
 
 }

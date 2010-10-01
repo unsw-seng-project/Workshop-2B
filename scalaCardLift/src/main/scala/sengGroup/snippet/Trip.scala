@@ -31,7 +31,7 @@ class Trip {
                   + chosenEntryPoint.open_!.name)
 
           val ro = SystemManagement.startTrip(accessDevice.get, (chosenEntryPoint.open_!))
-          if(!ro.guardsOK) S.error(ro.errorMessage)
+          S.notice(ro.errorMessage)
 
         } else {
           S.error("User Does not Exist");
@@ -60,7 +60,7 @@ class Trip {
                   + chosenExitPoint.open_!.name)
 
           val ro = SystemManagement.endTrip(accessDevice.get, (chosenExitPoint.open_!))
-          if(!ro.guardsOK) S.error(ro.errorMessage)
+          S.notice(ro.errorMessage)
 
         } else {
           S.error("User Does not Exist");
