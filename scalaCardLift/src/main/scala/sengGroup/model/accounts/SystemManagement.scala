@@ -73,7 +73,7 @@ object SystemManagement {
 
         def accountExists(accountID : Int) : Boolean = accounts.exists(x => x.accountId == accountID)
 
-          def accountExists(ad : AccessDevice) : Boolean = accounts.exists(x => x.accessDevice == ad)
+        def accountExists(ad : AccessDevice) : Boolean = accounts.exists(x => x.accessDevice == ad)
 
 
         def getAccount(accountID : Int) : Option[Account] = accounts.find(x => x.accountId == accountID)

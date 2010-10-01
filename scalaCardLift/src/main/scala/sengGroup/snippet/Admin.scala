@@ -87,8 +87,7 @@
            "dropDown" -> SHtml.selectObj[String](
           SystemManagement.concessionRate.keys.toList.map(v => (v,v.toString)),
           Empty, selected => chosenMethod = Full(selected) ),
-           "submit" -> SHtml.submit( "Change Concession" /*button name*/,
-            processForm /*function to call*/)
+           "submit" -> SHtml.submit( "Change Concession", processForm /*function to call*/)
       )
     }
 

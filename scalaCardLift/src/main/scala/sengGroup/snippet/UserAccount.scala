@@ -24,7 +24,8 @@ class UserAccount {
   def addToBalance(xhtml: NodeSeq): NodeSeq = {
      var  amount  =  "";
      
-    def validate () : Unit = {    val ro = currentUser.addToBalance(amount.toInt)
+    def validate () : Unit = {
+          val ro = currentUser.addToBalance(amount.toInt)
           if (ro.guardsOK) S.redirectTo("/account/details")
           else {
           S.error(ro.errorMessage);
