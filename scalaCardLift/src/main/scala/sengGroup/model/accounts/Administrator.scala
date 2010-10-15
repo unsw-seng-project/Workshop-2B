@@ -27,7 +27,6 @@ object Administrator {
                       SystemManagement.currentAccessDevices -= ad
 		      SystemManagement.bannedAccessDevices  += ad
 
-                      successful = System.activateDevice(newAd)
                       SystemManagement.currentAccessDevices += newAd -> acc
                       acc.accessDevice = newAd
                       successful = true

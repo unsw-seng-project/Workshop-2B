@@ -38,9 +38,12 @@ class Boot {
                   Menu(Loc("Login", List("login"), "Login", AuthNotRequired))::
                   Menu(Loc("AdminLogin", List("adminlogin"), "AdminLogin"))::
                   Menu(Loc("AdminLogout", List("adminlogout"), "AdminLogout"))::
-                  Menu(Loc("Admin", List("admin"), "Admin"))::
+                  Menu(Loc("Admin", List("admin"), "Admin", AdminOnly))::
+                  Menu(Loc("Status", List("status"), "status" )) ::
                   Menu(Loc("MakeTrip", List("makeTrip"), "MakeTrip"))::
-                  Menu(Loc("Routes", List("routes"), "Routes")):: Nil
+                  Menu(Loc("Routes", List("routes"), "Routes"))::
+                  Menu(Loc("iPhone", List("iPhone"), "iPhone")) :: Nil
+                  Menu(Loc("demo", List("demo/index"), "demo")) :: Nil
 
     LiftRules.setSiteMap(SiteMap(entries:_*))
 

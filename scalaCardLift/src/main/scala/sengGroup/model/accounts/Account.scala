@@ -33,7 +33,7 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 		var successful : Boolean = false
                 var message: String = ""
 
-		if (!System.currentAccessDevices.contains(accessDevice)
+		if (!SystemManagement.currentAccessDevices.contains(accessDevice)
 				&& balance + amount <= constants.MAXBALANCE
 				&& status == AccountStatus.Enabled) {
 			balance += amount
@@ -46,7 +46,7 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 	def subtractFromBalance (amount : Int):ResponseObject = {
 		var successful : Boolean = false
                 var message: String = ""
-		if (!System.currentAccessDevices.contains(accessDevice)
+		if (!SystemManagement.currentAccessDevices.contains(accessDevice)
 				&& balance - amount >= constants.MINBALANCE
 				&& status == AccountStatus.Enabled) {
 			balance -= amount
@@ -95,7 +95,7 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 	}
 	
 	private def usersFare(route:(EntryPoint,ExitPoint)): Int = {
-		return (Network.fare(route) - System.concessionRate(concession))
+		return (Network.fare(route) - SystemManagement.concessionRate(concession))
 	}
 
 
@@ -120,10 +120,11 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
                 return successful
 	}
 
-        def upgrade (newName:String, pass:String, address:String):Boolean = {
+        def upgrade (newName:String, pass:String, newAddress:String):Boolean = {
 		var successful : Boolean = false
 		if (status == AccountStatus.Enabled && !isPersonalAccount) {
 			name = newName
+                        address = newAddress
                         password = pass
                         successful = true
                         isPersonalAccount = true

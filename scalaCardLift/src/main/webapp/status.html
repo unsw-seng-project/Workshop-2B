@@ -1,0 +1,21 @@
+<lift:surround with="home" at="content">
+<div id="main">
+        <div id="Routes">
+
+		<h1>Current User Status</h1>
+        <table>
+        	<tr>
+            <th>AccountID</th><th>DeviceID</th><th>Balance</th><th>Status</th><th>Concession</th><th>Current Entry Point</th>
+            </tr>
+            <lift:admin.status>
+            <tr>
+            <td><acc:accountID /></td><td><acc:deviceID /></td><td><acc:balance /></td><td><acc:status /></td><td><acc:concession /></td><td><acc:currentEntryPoint /></td>
+            </tr>
+            </lift:admin.status>
+
+        </table>
+        
+        
+        </div>
+   </div>
+</lift:surround>

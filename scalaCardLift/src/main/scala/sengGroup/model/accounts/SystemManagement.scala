@@ -25,8 +25,8 @@ object SystemManagement {
 	
 	val concessionRate : Map[String, Int] 
 	                      = Map("Student"->5,
-	                     		  "Adult"->10,
-	                     		  "Child"->0)
+	                     		  "Adult"->0,
+	                     		  "Child"->5)
 
         def newAccount:Account = {
           accountCounter += 1
@@ -56,11 +56,19 @@ object SystemManagement {
           }
         }
 
-        def changeDetails (ad:AccessDevice, name:String, password:String, address:String) = {
+        def changeDetails (ad:AccessDevice, name:String, password:String, address:String) : ResponseObject = {
+          var ro = new ResponseObject(false, "account error")
           if (accountExists(ad) && getAccount(ad).get.isPersonalAccount) {
-            if (password != getAccount(ad).get.password)
+            if (password == getAccount(ad).get.password) {
               getAccount(ad).get.changePersonalDetails(name, password,  address)
+              ro = new ResponseObject(true, "details changed successfully")
+            } else {
+              ro = new ResponseObject(false, "password incorrect")
+            }
           }
+          return ro
+
+
         }
 
         def changePassword (ad:AccessDevice, oldPassword:String, newPassword:String) = {

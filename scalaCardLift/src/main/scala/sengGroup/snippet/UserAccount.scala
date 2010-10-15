@@ -76,6 +76,9 @@ class UserAccount {
        SystemManagement.upgrade(currentUser.accessDevice, name, password, address)
 
       println("current user personal status after upgrade = " + currentUser.isPersonalAccount)
+      println("name = " + currentUser.name)
+      println("address = " + currentUser.address)
+      println("password = " + currentUser.password)
 
        S.redirectTo("/account/personal")
     }
@@ -86,12 +89,17 @@ class UserAccount {
         { submit("Login", redirect)}
         </span>
       } else {
-        <span>
+        <div>
+       	<LABEL>Name:</LABEL>
         { text("Name", n => name = n)}
+        <LABEL>Address:</LABEL>
         { text("Address", a => address = a)}
+        <br />
+        <LABEL>New Password: </LABEL>
         { SHtml.password("", p => password = p)}
         { submit("Upgrade", upgrade)}
-        </span>
+
+        </div>
       }
 
 
@@ -129,15 +137,20 @@ class UserAccount {
     var address = ""
 
     def changeDetails () : Unit = {
-      SystemManagement.changeDetails(currentUser.accessDevice, name, password, address)
+      var ro = SystemManagement.changeDetails(currentUser.accessDevice, name, password, address)
+      S.notice(ro.errorMessage)
     }
+        <div>
+       	<LABEL>Name:</LABEL>
+        { text("Name", n => name = n)}
+        <LABEL>Address:</LABEL>
+        { text("Address", a => address = a)}
+        <br />
+        <LABEL>Password to change:</LABEL>
+        { SHtml.password("", p => password = p)}
+        { submit("ChangeDetails", changeDetails)}
 
-    <div>
-      { SHtml.text(currentUser.name, n => name = n)}
-      { text(currentUser.address, a => address = a)}
-      { SHtml.password("", p => password = p)}
-      { submit("Change Details", changeDetails)}
-     </div>
+        </div>
 
   }
 

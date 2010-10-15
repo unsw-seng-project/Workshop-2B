@@ -19,11 +19,13 @@ import S._
 
 
 class NetworkManagement {
-  def routes(xhtml: NodeSeq): NodeSeq =
-    (Network.routes.toList.flatMap(ro => bind("r",
+  def routes(xhtml: NodeSeq): NodeSeq = {
+
+    (Network.routes.toList.sort((a,b) => a._1.name < b._1.name).flatMap(ro => bind("r",
          xhtml, "entry" -> ro._1.name,
                "exit" -> ro._2.name,
                 "cost" -> Network.fare(ro))))
+  }
 
   def concession(xhtml: NodeSeq): NodeSeq =
     (SystemManagement.concessionRate.toList.flatMap(ro => bind("c",

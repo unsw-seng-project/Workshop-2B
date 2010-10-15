@@ -34,7 +34,7 @@ import _root_.sengGroup.model.ResponseObject
       def  auth  ()  =  {
         if (Administrator.adminPassword.equals(pass)) {
           adminLoggedIn.set(true)
-          S.redirectTo("Admin")
+          S.redirectTo("admin")
 
         } else {
           S.error("Admin Password Incorrect");
@@ -153,6 +153,15 @@ import _root_.sengGroup.model.ResponseObject
             processForm /*function to call*/)
       )
     }
+
+    def status(xhtml: NodeSeq): NodeSeq =
+      (SystemManagement.accounts.toList.flatMap(acc => bind("acc",
+         xhtml, "accountID" -> acc.accountId,
+               "deviceID" -> acc.accessDevice.deviceID,
+                "balance" -> acc.balance,
+                "status" -> acc.status.toString,
+                "concession" -> acc.concession,
+                "currentEntryPoint" -> acc.userEntryPoint.name)))
 
 
 
