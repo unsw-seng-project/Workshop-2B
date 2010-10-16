@@ -42,10 +42,21 @@ class Boot {
                   Menu(Loc("Status", List("status"), "status" )) ::
                   Menu(Loc("MakeTrip", List("makeTrip"), "MakeTrip"))::
                   Menu(Loc("Routes", List("routes"), "Routes"))::
-                  Menu(Loc("iPhone", List("iPhone"), "iPhone")) :: Nil
-                  Menu(Loc("demo", List("demo/index"), "demo")) :: Nil
+                  Menu(Loc("iPhone", List("iphone") -> true, "iPhone"))::
+                  Menu(Loc("viewAcc", List("iphone/viewAcc"), "viewAcc")) :: Nil
 
     LiftRules.setSiteMap(SiteMap(entries:_*))
+    
+    LiftRules.rewrite.prepend{
+      case RewriteRequest(
+          ParsePath("iphone"  :: "acc" :: accId :: Nil, _, _,_), _, _) => {
+          println("redirecting to :" + accId)
+          RewriteResponse(
+            "iphone/viewAcc" :: Nil, Map("accId" -> accId)
+          )
+        }
+    }
+
 
    // LiftRules.dispatch.append  {
    //   case  Req("logout"  ::  Nil,  _,  _)  => AuthFunctions.logout  _

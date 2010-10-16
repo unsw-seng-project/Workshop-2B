@@ -9,5 +9,5 @@ object constants {
 	val MAXFARE = 20
 	val PENALTYFARE = 20
 
-        val NOENTRY = new EntryPoint(0, "")
+        val NOENTRY = new EntryPoint(0, "Not travelling")
 }

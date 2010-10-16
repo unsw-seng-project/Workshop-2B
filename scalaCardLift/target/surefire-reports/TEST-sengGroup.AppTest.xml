@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.81" errors="0" skipped="0" tests="2" name="sengGroup.AppTest">
+<testsuite failures="0" time="0.747" errors="1" skipped="0" tests="2" name="sengGroup.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Java\jdk1.6.0_16\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="C:\Users\Joseph\Documents\CSE-2010\se2020\Development\Workshop-2B\scalaCardLift"/>
     <property name="java.endorsed.dirs" value="C:\Java\jdk1.6.0_16\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="C:\Users\Joseph\AppData\Local\Temp\surefirebooter622189932028745668.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Joseph\AppData\Local\Temp\surefirebooter6260010435079953180.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\Joseph\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -59,6 +59,119 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="1.791" classname="sengGroup.AppTest" name="testXml"/>
-  <testcase time="0" classname="sengGroup.AppTest" name="testOK"/>
+  <testcase time="0.67" classname="sengGroup.AppTest" name="testXml">
+    <error message="line 28 does not exist" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: line 28 does not exist
+	at scala.io.Source.getLine(Source.scala:280)
+	at scala.io.Source.report(Source.scala:368)
+	at scala.io.Source.reportError(Source.scala:355)
+	at scala.io.Source.reportError(Source.scala:344)
+	at scala.xml.parsing.MarkupParser$class.reportSyntaxError(MarkupParser.scala:1113)
+	at net.liftweb.util.PCDataXmlParser.reportSyntaxError(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.reportSyntaxError(MarkupParser.scala:1117)
+	at net.liftweb.util.PCDataXmlParser.reportSyntaxError(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.xEndTag(MarkupParser.scala:378)
+	at net.liftweb.util.PCDataXmlParser.xEndTag(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.element1(MarkupParser.scala:683)
+	at net.liftweb.util.PCDataXmlParser.element1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content1(MarkupParser.scala:481)
+	at net.liftweb.util.PCDataXmlParser.content1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content(MarkupParser.scala:505)
+	at net.liftweb.util.PCDataXmlParser.content(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.element1(MarkupParser.scala:682)
+	at net.liftweb.util.PCDataXmlParser.element1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content1(MarkupParser.scala:481)
+	at net.liftweb.util.PCDataXmlParser.content1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content(MarkupParser.scala:505)
+	at net.liftweb.util.PCDataXmlParser.content(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.element1(MarkupParser.scala:682)
+	at net.liftweb.util.PCDataXmlParser.element1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content1(MarkupParser.scala:481)
+	at net.liftweb.util.PCDataXmlParser.content1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content(MarkupParser.scala:505)
+	at net.liftweb.util.PCDataXmlParser.content(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.element1(MarkupParser.scala:682)
+	at net.liftweb.util.PCDataXmlParser.element1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content1(MarkupParser.scala:481)
+	at net.liftweb.util.PCDataXmlParser.content1(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.content(MarkupParser.scala:505)
+	at net.liftweb.util.PCDataXmlParser.content(PCDataMarkupParser.scala:91)
+	at scala.xml.parsing.MarkupParser$class.document(MarkupParser.scala:207)
+	at net.liftweb.util.PCDataXmlParser.document(PCDataMarkupParser.scala:91)
+	at net.liftweb.util.PCDataXmlParser$.apply(PCDataMarkupParser.scala:102)
+	at sengGroup.AppTest.wellFormed$1(AppTest.scala:59)
+	at sengGroup.AppTest$$anonfun$wellFormed$1$1.apply(AppTest.scala:49)
+	at sengGroup.AppTest$$anonfun$wellFormed$1$1.apply(AppTest.scala:49)
+	at scala.Iterator$class.foreach(Iterator.scala:414)
+	at scala.runtime.BoxedArray$AnyIterator.foreach(BoxedArray.scala:45)
+	at scala.Iterable$class.foreach(Iterable.scala:256)
+	at scala.runtime.BoxedArray.foreach(BoxedArray.scala:24)
+	at sengGroup.AppTest.wellFormed$1(AppTest.scala:49)
+	at sengGroup.AppTest$$anonfun$wellFormed$1$1.apply(AppTest.scala:49)
+	at sengGroup.AppTest$$anonfun$wellFormed$1$1.apply(AppTest.scala:49)
+	at scala.Iterator$class.foreach(Iterator.scala:414)
+	at scala.runtime.BoxedArray$AnyIterator.foreach(BoxedArray.scala:45)
+	at scala.Iterable$class.foreach(Iterable.scala:256)
+	at scala.runtime.BoxedArray.foreach(BoxedArray.scala:24)
+	at sengGroup.AppTest.wellFormed$1(AppTest.scala:49)
+	at sengGroup.AppTest.testXml(AppTest.scala:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:79)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+</error>
+    <system-out>webapp
+account
+addToBalance.html
+details.html
+myAccount.html
+personal.html
+personalLogin.html
+tripHistory.html
+admin.html
+adminlogin.html
+home.html
+images
+navbar.png
+title.png
+index.html
+iphone
+accounts.html
+iphone-template.html
+iPhone.html
+viewAcc.html
+jquery-1.4.2.min.js
+login.html
+logout.html
+main.css
+makeTrip.html
+Routes.html
+status.html
+Templates
+main template.dwt
+templates-hidden
+default.html
+UiUIKit
+about.html
+</system-out>
+  </testcase>
+  <testcase time="0.001" classname="sengGroup.AppTest" name="testOK"/>
 </testsuite>
