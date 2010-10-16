@@ -2,13 +2,14 @@
 
 <lift:snippet type="IPhone:viewAcc"  />
 
+<h1> Trip History </h1>
+
 <ul>
 	<lift:IPhone:tripHistory>
     	<li>
-        <a href=""> Date: <trip:date /></a>
-        <a href=""> Start: <trip:entry /></a>
-        <a href=""> End: <trip:exit /> </a>
         <small> Cost: <trip:cost /> </small>
+        <a href=""> Date: <trip:date /></a>
+        <a href=""> Trip Details: <strong><trip:entry /></strong> --> <strong><trip:exit /></strong></a>
          </li>
     </lift:IPhone:tripHistory>
 </ul>
