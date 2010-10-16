@@ -31,8 +31,14 @@ class IPhone {
       }
 
     {
+      	<div id="header">
+
+		<h1>Account Info</h1>
+                <a id="backButton" href="/iphone/accounts.html">Accounts</a>
+	</div>
       <h1> Account {acc.accountId} </h1>
       <ul class="field">
+        <li><h3> Device ID: </h3> {acc.accessDevice.deviceID} </li>
         <li><h3> Balance: </h3> {acc.balance} </li>
         <li><h3> Status: </h3> {acc.status}</li>
         <li><h3> EntryPoint: </h3> {acc.userEntryPoint.name} </li>
@@ -40,9 +46,23 @@ class IPhone {
         <li><h3> Is Personal Account: </h3> {acc.isPersonalAccount}</li>
       </ul>
 
+      
+
 
 
     }
+  }
+
+  def tripHistory(xhtml: NodeSeq): NodeSeq = {
+    val accountId = S.param("accId")
+    println("generating trip history for " + accountId)
+    val acc = SystemManagement.getAccount(accountId.get.toInt).get
+
+    return acc.travelHistory.toList.flatMap(rec => bind("trip",
+                                                                xhtml, "entry" -> rec.entryPoint.name,
+                                                                "exit" -> rec.exitPoint.name,
+                                                                "cost" -> rec.cost,
+                                                                "date" -> rec.date))
   }
 
 

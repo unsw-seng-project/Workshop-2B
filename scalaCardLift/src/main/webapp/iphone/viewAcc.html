@@ -1,7 +1,15 @@
 <lift:surround with="/iphone/iphone-template" at="content">
-	<div id="header">
-		<h1>Account Info</h1>
-	</div>
+
 <lift:snippet type="IPhone:viewAcc"  />
 
+<ul>
+	<lift:IPhone:tripHistory>
+    	<li>
+        <a href=""> Date: <trip:date /></a>
+        <a href=""> Start: <trip:entry /></a>
+        <a href=""> End: <trip:exit /> </a>
+        <small> Cost: <trip:cost /> </small>
+         </li>
+    </lift:IPhone:tripHistory>
+</ul>
  </lift:surround>

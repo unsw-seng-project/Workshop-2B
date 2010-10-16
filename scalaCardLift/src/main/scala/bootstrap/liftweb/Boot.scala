@@ -58,6 +58,7 @@ class Boot {
     }
 
 
+
    // LiftRules.dispatch.append  {
    //   case  Req("logout"  ::  Nil,  _,  _)  => AuthFunctions.logout  _
    // }
