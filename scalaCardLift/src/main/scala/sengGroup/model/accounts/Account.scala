@@ -11,10 +11,10 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
 
         var isLoggedInSomewhere :Boolean = false;
 
-	var concession : Concession = "Student"
+	var concession : Concession = "Adult"
 	//def getConcession = concession
 		
-	var balance : Int = 20
+	var balance : Int = 30
 	//def getBalance = balance
 	
 	var status = AccountStatus.Enabled
@@ -120,7 +120,7 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
            var fare:int = 0
            if (!Network.routes.contains(route)) fare = 20 //route does not exist, penalty fare
            else {
-             fare = (Network.fare(route) - SystemManagement.concessionRate(concession))
+             fare = (Network.fare(route) + SystemManagement.concessionRate(concession))
            }
 		return fare
 	}
@@ -151,13 +151,13 @@ class Account (var accessDevice : AccessDevice, val accountId : Int) {
                 return successful
 	}
 
-        def upgrade (newName:String, pass:String, address:String):Boolean = {
+        def upgrade (newName:String, pass:String, newAddress:String):Boolean = {
 		var successful : Boolean = false
                 if (status != AccountStatus.Enabled) return false //account is disabled
                 if (isPersonalAccount) return false //account is already a personal account
 		else {
 			name = newName
-
+                        address = newAddress
                         password = pass
                         successful = true
                         isPersonalAccount = true

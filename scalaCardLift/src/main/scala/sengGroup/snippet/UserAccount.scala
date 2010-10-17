@@ -42,7 +42,8 @@ class UserAccount {
     return currentUser.travelHistory.toList.flatMap(rec => bind("r",
          xhtml, "entry" -> rec.entryPoint.name,
                "exit" -> rec.exitPoint.name,
-                "cost" -> rec.cost,
+                "cost" -> (rec.cost - SystemManagement.concessionRate(currentUser.concession)),
+                "costWithConcession" -> rec.cost,
                 "date" -> rec.date))
   }
 
@@ -132,9 +133,9 @@ class UserAccount {
       println("current user personal status = " + currentUser.isPersonalAccount)
       S.redirectTo("/account/personalLogin")
     }
-    var name = ""
+    var name = currentUser.name
     var password = ""
-    var address = ""
+    var address = currentUser.address
 
     def changeDetails () : Unit = {
       var ro = SystemManagement.changeDetails(currentUser.accessDevice, name, password, address)

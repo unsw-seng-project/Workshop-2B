@@ -1,0 +1,30 @@
+<lift:surround with="/iphone/iphone-template" at="content">
+
+	<div id="header">
+        <a id="backButton" href="home.html">Home</a>
+		<h1>Trip Interface</h1>
+	</div>
+
+<h1> Start Trip </h1>
+	<ul class="form">
+    <lift:trip.start form="POST">
+		<li><LABEL for="deviceID">Access Device ID:</LABEL><br />
+            <start:deviceID id="deviceID"/></li>
+        <li><LABEL for="entryPoint">Entry Point:</LABEL><br />
+            <start:accessPoint id="entryPoint" /></li>
+         <li>   <start:submit /> </li>
+	</lift:trip.start>
+    </ul>
+<h1> End Trip </h1>  
+<ul class="form">  
+    <lift:trip.end form="POST">
+		<li><LABEL for="deviceID">Access Device ID:</LABEL><br />
+            <end:deviceID id="deviceID"/></li>
+       <li> <LABEL for="exitPoint">Exit Point:</LABEL><br />
+             <end:accessPoint id="exitPoint" /></li>
+          <li>  <end:submit class="button white"/></li>
+	</lift:trip.end> 
+ </ul>
+    <div id="messages"><lift:msgs>Messages Here</lift:msgs></div>
+
+ </lift:surround>

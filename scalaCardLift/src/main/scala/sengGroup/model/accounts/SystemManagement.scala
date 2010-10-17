@@ -24,9 +24,24 @@ object SystemManagement {
 	var accounts : Set[Account] = Set()
 	
 	val concessionRate : Map[String, Int] 
-	                      = Map("Student"->5,
-	                     		  "Adult"->0,
-	                     		  "Child"->5)
+	                      = Map("Adult"->10, "Student"->5, "Child"->0)
+
+         //add some accounts
+         newAccount
+         newAccount
+         changeConcessionType(getAccessDevice(1).get, "Student")
+         startTrip (getAccessDevice(1).get, Network.entryPoints(0))
+         endTrip (getAccessDevice(1).get, Network.exitPoints(1))
+         startTrip (getAccessDevice(1).get, Network.entryPoints(2))
+         endTrip (getAccessDevice(1).get, Network.exitPoints(4))
+
+         upgrade(getAccessDevice(2).get, "Joe Blogs", "password", "UNSW")
+
+         newAccount
+         startTrip (getAccessDevice(3).get, Network.entryPoints(2))
+
+         newAccount
+         changeAccountStatus(getAccessDevice(4).get, AccountStatus.Disabled)
 
         def newAccount:Account = {
           accountCounter += 1

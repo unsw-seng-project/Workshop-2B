@@ -2,14 +2,22 @@
 
 <lift:snippet type="IPhone:viewAcc"  />
 
+<h1> Personal Details </h1>
+    	<ul class="field">
+        <lift:IPhone:personalDetails>
+        <li> <h3>name: </h3> <acc:name /> </li>
+        <li> <h3>address: </h3> <acc:address /> </li>
+    </lift:IPhone:personalDetails>
+        </ul>
+
 <h1> Trip History </h1>
 
 <ul>
 	<lift:IPhone:tripHistory>
     	<li>
-        <small> Cost: <trip:cost /> </small>
+        <small> $<trip:cost /> </small>
         <a href=""> Date: <trip:date /></a>
-        <a href=""> Trip Details: <strong><trip:entry /></strong> --> <strong><trip:exit /></strong></a>
+        <a href=""> <trip:entry /> --> <trip:exit /></a>
          </li>
     </lift:IPhone:tripHistory>
 </ul>
