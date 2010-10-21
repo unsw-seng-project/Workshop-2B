@@ -28,7 +28,7 @@
 <p> Please enter the accountId you want to modify </p>
 
 	<lift:admin.changeConcession form="POST">
-    	<LABEL>Account ID:</LABEL><concession:user />
+    	<LABEL>Access Device ID:</LABEL><concession:user />
         <LABEL>Concession:</LABEL><concession:dropDown />
     	<concession:submit />
     </lift:admin.changeConcession>
@@ -36,7 +36,7 @@
 <h2> Change Status </h2>
 
 	<lift:admin.changeStatus form="POST">
-    	<LABEL>Account ID:</LABEL><s:user />
+    	<LABEL>Access Device ID:</LABEL><s:user />
         <br />
         <LABEL>Status:</LABEL><br />
         <s:radio />

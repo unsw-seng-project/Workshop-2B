@@ -39,6 +39,7 @@ object Administrator {
                       //successful = SystemManagement.activateDevice(newAd)
                       SystemManagement.currentAccessDevices += newAd -> acc
                       acc.accessDevice = newAd
+                      acc.userEntryPoint = constants.NOENTRY
                       return new ResponseObject(true, "Amount added successfully")
 
                 }

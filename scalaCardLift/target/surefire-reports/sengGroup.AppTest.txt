@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: sengGroup.AppTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.473 sec <<< FAILURE!
-testXml(sengGroup.AppTest)  Time elapsed: 0.429 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.034 sec <<< FAILURE!
+testXml(sengGroup.AppTest)  Time elapsed: 0.94 sec  <<< ERROR!
 java.lang.IllegalArgumentException: line 28 does not exist
 	at scala.io.Source.getLine(Source.scala:280)
 	at scala.io.Source.report(Source.scala:368)
