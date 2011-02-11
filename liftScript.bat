@@ -1,1 +1,1 @@
-mvn archetype:generate -U  -DarchetypeGroupId=net.liftweb  -DarchetypeArtifactId=lift-archetype-blank  -DarchetypeVersion=1.0 -DremoteRepositories=http://scala-tools.org/repo-releases -DgroupId=sengGroup -DartifactId=scalaCardLift -Dversion=0.1-SNAPSHOT 
+mvn archetype:generate -U  -DarchetypeGroupId=net.liftweb  -DarchetypeArtifactId=lift-archetype-blank  -DarchetypeVersion=1.0 -DremoteRepositories=http://scala-tools.org/repo-releases -DgroupId=sengGroup -DartifactId=scalaCardLift -Dversion=0.1-SNAPSHOT
